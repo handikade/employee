@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subscriber } from 'rxjs';
 
 @Injectable({
@@ -8,7 +9,7 @@ export class AuthService {
   private readonly USERNAME: string = 'admin';
   private readonly PASSWORD: string = '123456';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   login(payload: LoginPayload): Observable<any> {
     const successResponse: LoginSuccessResponse = {
@@ -31,6 +32,11 @@ export class AuthService {
         }
       }, 1000);
     });
+  }
+
+  logout(): void {
+    localStorage.removeItem('_token_');
+    this.router.navigateByUrl('login');
   }
 }
 
