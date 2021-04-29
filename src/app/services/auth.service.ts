@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, Subscriber } from 'rxjs';
+import { Observable, Subscriber } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly USERNAME: string = "admin";
-  private readonly PASSWORD: string = "123456";
+  private readonly USERNAME: string = 'admin';
+  private readonly PASSWORD: string = '123456';
 
   constructor() { }
 
   login(payload: LoginPayload): Observable<any> {
     const successResponse: LoginSuccessResponse = {
       status: 200,
-      token: "NrgQz7D5mjJGlBsvuCxo"
+      token: 'NrgQz7D5mjJGlBsvuCxo'
     }
 
     const errorResponse: LoginErrorResponse = {
       status: 403,
-      message: "Username atau Password salah"
+      message: 'Username or Password not match'
     }
 
     return new Observable((subscriber: Subscriber<any>) => {

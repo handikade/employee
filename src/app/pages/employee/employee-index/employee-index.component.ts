@@ -23,14 +23,13 @@ export class EmployeeIndexComponent implements OnInit {
 
   ngOnInit(): void {
     this.employeeService.getEmployees().subscribe(response => {
-      console.log("#debug response:", response);
       this.employees = response;
     });
   }
 
   editEmployee(employee: Employee): void {
     this.messageService.add({
-      key: 'bc',
+      key: 'p-toast',
       severity: 'warn',
       summary: 'Edit Success',
       detail: `Employee ${employee.username} has been edited.`
@@ -39,7 +38,7 @@ export class EmployeeIndexComponent implements OnInit {
 
   deleteEmployee(employee: Employee): void {
     this.messageService.add({
-      key: 'bc',
+      key: 'p-toast',
       severity: 'error',
       summary: 'Delete Success',
       detail: `Employee ${employee.username} has been deleted.`
@@ -47,7 +46,7 @@ export class EmployeeIndexComponent implements OnInit {
   }
 
   viewEmployee(employee: Employee): void {
-    this.router.navigate(['employee', employee.username]);
+    this.router.navigate(['employee/detail/', employee.username]);
   }
 
   createEmployee(): void {

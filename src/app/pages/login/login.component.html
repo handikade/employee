@@ -1,8 +1,10 @@
+<p-toast position="bottom-right" key="p-toast"></p-toast>
+
 <div class="login">
     <div class="login-card">
         <form [formGroup]="loginForm" #ngForm="ngForm" (ngSubmit)="onSubmit()">
             <div class="login-card__title">
-                Silahkan Masuk
+                Employee Management
             </div>
             <div class="login-card__body">
                 <mat-form-field appearance="outline" class="w-100">
@@ -10,7 +12,7 @@
                     <input matInput formControlName="username">
                     <mat-icon matSuffix>account_circle</mat-icon>
                     <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
-                        Username wajib diisi
+                        Username is required
                     </mat-error>
                     <mat-hint>username: "admin"</mat-hint>
                 </mat-form-field>
@@ -19,14 +21,14 @@
                     <input matInput type="password" formControlName="password">
                     <mat-icon matSuffix>password</mat-icon>
                     <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
-                        Password wajib diisi
+                        Password is required
                     </mat-error>
                     <mat-hint>password: "123456"</mat-hint>
                 </mat-form-field>
             </div>
             <div class="login-card__action">
-                <button type="submit" mat-raised-button color="primary" class="w-100">
-                    Masuk
+                <button type="submit" mat-flat-button color="primary" class="w-100">
+                    Login
                 </button>
             </div>
         </form>

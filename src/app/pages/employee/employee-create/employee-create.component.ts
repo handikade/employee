@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -11,7 +11,7 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./employee-create.component.scss'],
   providers: [MessageService]
 })
-export class EmployeeCreateComponent implements OnInit {
+export class EmployeeCreateComponent {
   employeeForm: FormGroup;
   maxBirthDate: Date;
   statusList: any[] = [
@@ -63,8 +63,6 @@ export class EmployeeCreateComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void { }
-
   private filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
@@ -74,7 +72,7 @@ export class EmployeeCreateComponent implements OnInit {
   onSubmit(): void {
     if (this.employeeForm.valid) {
       this.messageService.add({
-        key: 'bc',
+        key: 'p-toast',
         severity: 'success',
         summary: 'Create Success',
         detail: `Employee ${this.employeeForm.controls.username.value} has been created.`

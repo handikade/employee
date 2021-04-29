@@ -13,10 +13,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { LoginComponent } from './pages/login/login.component';
-import { SpinnerComponent } from './shared/components/spinner/spinner.component';
+import { ToastModule } from 'primeng/toast';
+
+import { LoginComponent } from '@app/pages/login/login.component';
+import { SpinnerComponent } from '@app/shared/components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +32,14 @@ import { SpinnerComponent } from './shared/components/spinner/spinner.component'
     ReactiveFormsModule,
     HttpClientModule,
     DashboardModule,
+
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
