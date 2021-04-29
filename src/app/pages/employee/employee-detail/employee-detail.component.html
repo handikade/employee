@@ -1,0 +1,64 @@
+<div class="employee-detail">
+    <app-card>
+        <ng-container card-header>
+            Employee Detail
+        </ng-container>
+        <ng-container card-body>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Username</mat-label>
+                <input matInput [value]="employee?.username" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>First Name</mat-label>
+                <input matInput [value]="employee?.firstName" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Last Name</mat-label>
+                <input matInput [value]="employee?.lastName" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Email</mat-label>
+                <input matInput [value]="employee?.email" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Birth Date</mat-label>
+                <input matInput [value]="employee?.birthDate" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Basic Salary</mat-label>
+                <input matInput [value]="employee?.basicSalary | currency:'Rp.'" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Status</mat-label>
+                <input matInput [value]="employee?.status" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Group</mat-label>
+                <input matInput [value]="employee?.group" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Description</mat-label>
+                <input matInput [value]="employee?.description" readonly>
+            </mat-form-field>
+        </ng-container>
+        <ng-container card-footer>
+            <button
+                type="submit"
+                mat-flat-button
+                color="primary"
+                form="employeeForm"
+                (click)="goToEmployeePage()"
+            >
+                OK
+            </button>
+        </ng-container>
+    </app-card>
+</div>

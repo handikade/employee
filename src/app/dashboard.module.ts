@@ -23,6 +23,7 @@ import { ToastModule } from 'primeng/toast';
 import { DashboardComponent } from '@app/shared/components/dashboard/dashboard.component';
 import { EmployeeIndexComponent } from '@app/pages/employee/employee-index/employee-index.component';
 import { EmployeeCreateComponent } from '@app/pages/employee/employee-create/employee-create.component';
+import { EmployeeDetailComponent } from '@app/pages/employee/employee-detail/employee-detail.component';
 import { CardComponent } from '@app/shared/components/card/card.component';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CardComponent } from '@app/shared/components/card/card.component';
     DashboardComponent,
     EmployeeIndexComponent,
     EmployeeCreateComponent,
+    EmployeeDetailComponent,
     CardComponent
   ],
   imports: [

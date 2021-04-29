@@ -47,7 +47,7 @@ export class EmployeeIndexComponent implements OnInit {
   }
 
   viewEmployee(employee: Employee): void {
-    //
+    this.router.navigate(['employee', employee.username]);
   }
 
   createEmployee(): void {
