@@ -2,13 +2,13 @@ import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { FormControl } from '@angular/forms';
+import { Table } from 'primeng/table';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { EmployeeService } from './../../../services/employee.service';
 
 import { Employee } from './../../../shared/types/Employee';
-import { Table } from 'primeng/table';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-employee-index',
@@ -53,7 +53,7 @@ export class EmployeeIndexComponent implements OnInit, OnDestroy, AfterViewInit 
 
   ngOnInit(): void {
     this.employeeService.getEmployees().subscribe(response => {
-      this.employees = response;
+      this.employees = response.employees;
     });
   }
 

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable, Subscriber } from 'rxjs';
 import employeeJson from './../shared/mocks/employees.json';
 
@@ -12,10 +11,18 @@ export class EmployeeService {
   filterForStatus$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   filterForGroup$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   getEmployees(): Observable<any> {
-    return this.http.get('assets/employees.json');
+    return new Observable((subscriber: Subscriber<any>) => {
+      const employees: Employee[] = employeeJson;
+
+      subscriber.next({
+        status: 200,
+        employees: employees
+      });
+      subscriber.complete();
+    });
   }
 
   getEmployeeByUsername(username: string): Observable<any> {
