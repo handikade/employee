@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable, Subscriber } from 'rxjs';
-import employeeJson from '@app/shared/mocks/employees.json';
+import employeeJson from './../shared/mocks/employees.json';
 
-import { Employee } from '@app/shared/types/Employee';
+import { Employee } from './../shared/types/Employee';
 
 @Injectable({
   providedIn: 'root'

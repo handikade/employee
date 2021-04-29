@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
-import { AuthService } from '@app/services/auth.service';
+import { AuthService } from './../../../services/auth.service';
 
 @Component({
   selector: 'app-dashboard',

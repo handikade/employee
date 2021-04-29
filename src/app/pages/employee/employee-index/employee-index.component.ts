@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { FormControl } from '@angular/forms';
 
-import { EmployeeService } from '@app/services/employee.service';
+import { EmployeeService } from './../../../services/employee.service';
 
-import { Employee } from '@app/shared/types/Employee';
+import { Employee } from './../../../shared/types/Employee';
 import { Table } from 'primeng/table';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';

@@ -6,8 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { DashboardModule } from '@app/dashboard.module';
-import { CanActivateLoginGuard } from '@app/guards/can-activate-login.guard';
+import { DashboardModule } from './dashboard.module';
+import { CanActivateLoginGuard } from './guards/can-activate-login.guard';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -17,8 +17,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { ToastModule } from 'primeng/toast';
 
-import { LoginComponent } from '@app/pages/login/login.component';
-import { SpinnerComponent } from '@app/shared/components/spinner/spinner.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
