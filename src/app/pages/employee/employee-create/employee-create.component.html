@@ -1,0 +1,127 @@
+<p-toast position="bottom-center" key="bc" (onClose)="goToEmployeePage()"></p-toast>
+
+<div class="employee-create">
+    <app-card>
+        <div card-header>
+            Add New Employee
+        </div>
+        <div card-body>
+            <form id="employeeForm" [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="username">
+                    <mat-error *ngIf="employeeForm.get('username')?.hasError('required')">
+                        Username is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName">
+                    <mat-error *ngIf="employeeForm.get('firstName')?.hasError('required')">
+                        First Name is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName">
+                    <mat-error *ngIf="employeeForm.get('lastName')?.hasError('required')">
+                        Last Name is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email">
+                    <mat-error *ngIf="employeeForm.get('email')?.hasError('required')">
+                        Email is required
+                    </mat-error>
+                    <mat-error *ngIf="employeeForm.get('email')?.hasError('email')">
+                        Invalid email format
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Birth Date</mat-label>
+                    <input matInput [matDatepicker]="pickerBirthDate" [max]="maxBirthDate" formControlName="birthDate">
+                    <mat-datepicker-toggle matSuffix [for]="pickerBirthDate"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerBirthDate></mat-datepicker>
+                    <mat-error *ngIf="employeeForm.get('birthDate')?.hasError('required')">
+                        Birth Date is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Basic Salary</mat-label>
+                    <input matInput formControlName="basicSalary">
+                    <mat-error *ngIf="employeeForm.get('basicSalary')?.hasError('required')">
+                        Basic Salary is required
+                    </mat-error>
+                    <mat-error *ngIf="employeeForm.get('basicSalary')?.hasError('pattern')">
+                        Basic Salary must be number
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Status</mat-label>
+                    <mat-select formControlName="status">
+                        <mat-option *ngFor="let status of statusList" [value]="status.value">
+                            {{status.label}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="employeeForm.get('status')?.hasError('required')">
+                        Status is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Group</mat-label>
+                    <input
+                        type="text"
+                        matInput
+                        formControlName="group"
+                        [matAutocomplete]="auto"
+                    >
+                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                        <mat-option *ngFor="let group of filteredGroups | async" [value]="group">
+                            {{group}}
+                        </mat-option>
+                    </mat-autocomplete>
+                    <mat-error *ngIf="employeeForm.get('group')?.hasError('required')">
+                        Group is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Description</mat-label>
+                    <input matInput [matDatepicker]="pickerDescription" formControlName="description">
+                    <mat-datepicker-toggle matSuffix [for]="pickerDescription"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerDescription></mat-datepicker>
+                    <mat-error *ngIf="employeeForm.get('description')?.hasError('required')">
+                        Basic Salary is required
+                    </mat-error>
+                </mat-form-field>
+            </form>
+        </div>
+        <ng-container card-footer>
+            <button
+                type="button"
+                mat-flat-button
+                color="accent"
+                style="margin-right: 10px;"
+                (click)="goToEmployeePage()"
+            >
+                Cancel
+            </button>
+            <button
+                type="submit"
+                mat-flat-button
+                color="primary"
+                form="employeeForm"
+            >
+                Save Employee
+            </button>
+        </ng-container>
+    </app-card>
+</div>
