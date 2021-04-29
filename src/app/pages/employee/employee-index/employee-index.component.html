@@ -9,8 +9,7 @@
     <div class="table-container">
         <p-table
             #dt
-            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-            styleClass="p-datatable-striped"
+            styleClass="p-datatable-striped p-datatable-responsive-demo"
             [value]="employees"
             [paginator]="true"
             [rows]="10"
@@ -86,7 +85,7 @@
                     <td>{{employee.status}}</td>
                     <td>{{employee.group}}</td>
                     <td>{{employee.description}}</td>
-                    <td>
+                    <td class="action">
                         <div style="display: flex; align-items: center;">
                             <button
                                 mat-icon-button

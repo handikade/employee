@@ -14,8 +14,86 @@
     padding: 5px 10px;
 }
 
-@media (max-width: 1300px) {
+:host ::ng-deep {
+    .p-datatable-responsive-demo .p-datatable-tbody > tr > td .p-column-title {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .table-container {
+        max-width: 650px;
+        margin: 0px auto;
+        overflow-x: unset;
+    }
+
+    .employee-index {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    :host ::ng-deep .p-datatable  {
+        min-width: unset;
+    }
+
+    :host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+        font-size: 14px;
+    }
+
+    :host ::ng-deep {
+        .p-datatable {
+            &.p-datatable-responsive-demo {
+                .p-datatable-thead > tr > th,
+                .p-datatable-tfoot > tr > td {
+                    display: none !important;
+                }
+
+                .p-datatable-tbody > tr > td {
+                    text-align: left;
+                    display: block;
+                    width: 100%;
+                    float: left;
+                    clear: left;
+                    border: 0 none;
+
+                    .p-column-title {
+                        padding: 0.4rem;
+                        min-width: 30%;
+                        display: inline-block;
+                        margin: -0.4em 1em -0.4em -0.4rem;
+                        font-weight: bold;
+                    }
+
+                    &:last-child {
+                        border-bottom: 1px solid var(--surface-d);
+                    }
+
+                    &.action {
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 641px) {
     .table-container {
         overflow-x: scroll;
+    }
+
+    :host ::ng-deep .p-datatable  {
+        min-width: 1300px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .table-container {
+        overflow-x: unset;
+    }
+
+    :host ::ng-deep .p-datatable  {
+        min-width: unset;
     }
 }
