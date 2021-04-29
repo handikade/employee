@@ -3,7 +3,7 @@
         <mat-drawer #drawer mode="over" style="width: 250px;">
             <mat-list>
                 <div mat-subheader>Menus</div>
-                <mat-list-item>
+                <mat-list-item (click)="goToEmployeePage()" style="cursor: pointer;">
                     <mat-icon mat-list-icon>people</mat-icon>
                     <div mat-line>Employee</div>
                 </mat-list-item>

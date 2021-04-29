@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 import { AuthService } from '@app/services/auth.service';
 
 @Component({
@@ -7,7 +9,17 @@ import { AuthService } from '@app/services/auth.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  constructor(private authService: AuthService) { }
+  @ViewChild('drawer') drawer: MatDrawer | undefined;
+
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) { }
+
+  goToEmployeePage(): void {
+    this.drawer?.toggle();
+    this.router.navigateByUrl('employee');
+  }
 
   logout() {
     this.authService.logout();
