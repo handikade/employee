@@ -4,8 +4,8 @@ import { Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 
-import { AuthService } from 'src/app/services/auth.service';
-import { SpinnerService } from 'src/app/services/spinner.service';
+import { AuthService } from './../../services/auth.service';
+import { SpinnerService } from './../../services/spinner.service';
 
 @Component({
   selector: 'app-login',
