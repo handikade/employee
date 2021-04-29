@@ -20,6 +20,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
+import { DropdownModule } from 'primeng/dropdown';
 
 import { DashboardComponent } from '@app/shared/components/dashboard/dashboard.component';
 import { EmployeeIndexComponent } from '@app/pages/employee/employee-index/employee-index.component';
@@ -54,7 +55,8 @@ import { CardComponent } from '@app/shared/components/card/card.component';
 
     TableModule,
     ButtonModule,
-    ToastModule
+    ToastModule,
+    DropdownModule
   ],
   providers: [CanActivateDashboardGuard]
 })

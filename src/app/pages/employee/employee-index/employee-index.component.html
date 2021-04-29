@@ -7,26 +7,71 @@
         </button>
     </div>
     <p-table
+        #dt
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        styleClass="p-datatable-striped"
         [value]="employees"
         [paginator]="true"
         [rows]="10"
         [showCurrentPageReport]="true" 
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
         [rowsPerPageOptions]="[10,25,50]"
-        styleClass="p-datatable-striped"
     >
         <ng-template pTemplate="header">
             <tr>
-                <th>Username</th>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th style="width: 90px;">Username</th>
+                <th style="width: 70px;">First Name</th>
+                <th style="width: 80px;">Last Name</th>
                 <th style="width: 200px;">Email</th>
-                <th>Birth Date</th>
-                <th>Basic Salary</th>
+                <th style="width: 90px;">Birth Date</th>
+                <th style="width: 100px;">Basic Salary</th>
                 <th>Status</th>
                 <th>Group</th>
-                <th>Description</th>
+                <th style="width: 90px;">Desc.</th>
                 <th>Action</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>
+                    <p-columnFilter field="status" matchMode="equals" [showMenu]="false">
+                        <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                            <p-dropdown
+                                placeholder="Status"
+                                [options]="statuses"
+                                (onChange)="filter($event.value)"
+                                [showClear]="true"
+                                [formControl]="statusFormControl"
+                            >
+                                <ng-template let-option pTemplate="item">
+                                    <span>{{option.label}}</span>
+                                </ng-template>
+                            </p-dropdown>
+                        </ng-template>
+                    </p-columnFilter>
+                </th>
+                <th>
+                    <p-columnFilter field="group" matchMode="equals" [showMenu]="false">
+                        <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                            <p-dropdown
+                                placeholder="Group"
+                                [options]="groups"
+                                (onChange)="filter($event.value)"
+                                [showClear]="true"
+                                [formControl]="groupFormControl"
+                            >
+                                <ng-template let-option pTemplate="item">
+                                    <span>{{option.label}}</span>
+                                </ng-template>
+                            </p-dropdown>
+                        </ng-template>
+                    </p-columnFilter>
+                </th>
+                <th></th>
+                <th></th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-employee>
@@ -36,7 +81,7 @@
                 <td>{{employee.lastName}}</td>
                 <td>{{employee.email}}</td>
                 <td>{{employee.birthDate}}</td>
-                <td>{{employee.basicSalary}}</td>
+                <td>{{employee.basicSalary | currency:'Rp.'}}</td>
                 <td>{{employee.status}}</td>
                 <td>{{employee.group}}</td>
                 <td>{{employee.description}}</td>

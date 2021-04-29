@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Observable, Subscriber } from 'rxjs';
+import { BehaviorSubject, Observable, Subscriber } from 'rxjs';
 import employeeJson from '@app/shared/mocks/employees.json';
 
 import { Employee } from '@app/shared/types/Employee';
@@ -9,6 +9,9 @@ import { Employee } from '@app/shared/types/Employee';
   providedIn: 'root'
 })
 export class EmployeeService {
+  filterForStatus$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  filterForGroup$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+
   constructor(private http: HttpClient) { }
 
   getEmployees(): Observable<any> {
