@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '@app/services/employee.service';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+
+import { EmployeeService } from '@app/services/employee.service';
 
 import { Employee } from '@app/shared/types/Employee';
 
@@ -12,21 +14,11 @@ import { Employee } from '@app/shared/types/Employee';
 })
 export class EmployeeIndexComponent implements OnInit {
   employees: any[] = [];
-  displayedColumns: string[] = [
-    'username',
-    'firstName',
-    'lastName',
-    'email',
-    'birthDate',
-    'basicSalary',
-    'status',
-    'group',
-    'description'
-  ];
 
   constructor(
     private employeeService: EmployeeService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -55,6 +47,10 @@ export class EmployeeIndexComponent implements OnInit {
   }
 
   viewEmployee(employee: Employee): void {
-    console.log("#debug employee:", employee);
+    //
+  }
+
+  createEmployee(): void {
+    this.router.navigateByUrl('employee/add');
   }
 }

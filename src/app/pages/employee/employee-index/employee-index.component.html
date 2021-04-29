@@ -1,6 +1,11 @@
 <p-toast position="bottom-center" key="bc"></p-toast>
 
 <div class="employee-index">
+    <div class="employee-index__action">
+        <button mat-flat-button color="primary" (click)="createEmployee()">
+            <mat-icon>add</mat-icon> Add New Employee
+        </button>
+    </div>
     <p-table
         [value]="employees"
         [paginator]="true"

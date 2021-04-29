@@ -1,5 +1,12 @@
 .employee-index {
     padding: 30px 50px 100px;
+
+    &__action {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 30px;
+    }
 }
 
 :host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
