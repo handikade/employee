@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { DashboardModule } from '@app/dashboard.module';
+import { CanActivateLoginGuard } from '@app/guards/can-activate-login.guard';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -41,7 +42,7 @@ import { SpinnerComponent } from '@app/shared/components/spinner/spinner.compone
 
     ToastModule
   ],
-  providers: [],
+  providers: [CanActivateLoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

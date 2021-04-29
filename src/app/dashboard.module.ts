@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { DashboardRoutingModule } from '@app/dashboard-routing.module';
+import { CanActivateDashboardGuard } from '@app/guards/can-activate-dashboard.guard';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -54,6 +55,7 @@ import { CardComponent } from '@app/shared/components/card/card.component';
     TableModule,
     ButtonModule,
     ToastModule
-  ]
+  ],
+  providers: [CanActivateDashboardGuard]
 })
 export class DashboardModule { }
