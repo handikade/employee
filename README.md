@@ -9,3 +9,9 @@ Install node.js v 10++
 Run `npm install`.
 
 Run `ng serve --open`. Navigate to `http://localhost:4200/` if the browser is not automatically opened.
+
+## Credentials
+
+username: "admin"
+
+password: "123456"
