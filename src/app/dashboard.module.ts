@@ -22,11 +22,11 @@ import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { DropdownModule } from 'primeng/dropdown';
 
-import { DashboardComponent } from './shared/components/dashboard/dashboard.component';
-import { EmployeeIndexComponent } from './pages/employee/employee-index/employee-index.component';
-import { EmployeeCreateComponent } from './pages/employee/employee-create/employee-create.component';
-import { EmployeeDetailComponent } from './pages/employee/employee-detail/employee-detail.component';
-import { CardComponent } from './shared/components/card/card.component';
+import { DashboardComponent } from '@app/shared/components/dashboard/dashboard.component';
+import { EmployeeIndexComponent } from '@app/pages/employee/employee-index/employee-index.component';
+import { EmployeeCreateComponent } from '@app/pages/employee/employee-create/employee-create.component';
+import { EmployeeDetailComponent } from '@app/pages/employee/employee-detail/employee-detail.component';
+import { CardComponent } from '@app/shared/components/card/card.component';
 
 @NgModule({
   declarations: [

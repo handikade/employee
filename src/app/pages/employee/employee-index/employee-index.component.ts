@@ -6,9 +6,9 @@ import { Table } from 'primeng/table';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { EmployeeService } from './../../../services/employee.service';
+import { EmployeeService } from '@services/employee.service';
 
-import { Employee } from './../../../shared/types/Employee';
+import { Employee } from '@app/shared/types/Employee';
 
 @Component({
   selector: 'app-employee-index',

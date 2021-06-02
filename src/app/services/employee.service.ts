@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subscriber } from 'rxjs';
-import employeeJson from './../shared/mocks/employees.json';
+import employeeJson from '@app/shared/mocks/employees.json';
 
-import { Employee } from './../shared/types/Employee';
+import { Employee } from '@app/shared/types/Employee';
 
 @Injectable({
   providedIn: 'root'
