@@ -15,16 +15,16 @@ export class AuthService {
     const successResponse: LoginSuccessResponse = {
       status: 200,
       token: 'NrgQz7D5mjJGlBsvuCxo'
-    }
+    };
 
     const errorResponse: LoginErrorResponse = {
       status: 403,
       message: 'Username or Password not match'
-    }
+    };
 
     return new Observable((subscriber: Subscriber<any>) => {
       setTimeout(() => { // mocking API delay
-        if (payload.username === this.USERNAME && payload.password == this.PASSWORD) {
+        if (payload.username === this.USERNAME && payload.password === this.PASSWORD) {
           subscriber.next(successResponse);
           subscriber.complete();
         } else {

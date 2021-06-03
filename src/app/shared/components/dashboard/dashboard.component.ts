@@ -21,7 +21,7 @@ export class DashboardComponent {
     this.router.navigateByUrl('employee');
   }
 
-  logout() {
+  logout(): void {
     this.authService.logout();
   }
 }

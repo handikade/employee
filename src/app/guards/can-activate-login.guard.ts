@@ -12,8 +12,8 @@ export class CanActivateLoginGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (!localStorage.getItem('_token_')) return true;
-  
+    if (!localStorage.getItem('_token_')) { return true; }
+
     this.router.navigateByUrl('employee');
     return false;
   }

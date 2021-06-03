@@ -20,14 +20,14 @@ export class EmployeeIndexComponent implements OnInit, OnDestroy, AfterViewInit 
   employees: any[] = [];
 
   statusFormControl = new FormControl('');
-  filterForStatus: string = '';
+  filterForStatus = '';
   statuses: any[] = [
     { label: 'Single', value: 'single' },
     { label: 'Married', value: 'married' },
   ];
 
   groupFormControl = new FormControl('');
-  filterForGroup: string = '';
+  filterForGroup = '';
   groups: any[] = [
     { label: 'Engineering', value: 'engineering' },
     { label: 'Finance', value: 'finance' },
@@ -65,7 +65,7 @@ export class EmployeeIndexComponent implements OnInit, OnDestroy, AfterViewInit 
         setTimeout(() => {
           this.statusFormControl.setValue(filterForStatus);
         }, 0);
-        this.dt?.filter(filterForStatus, 'status', 'equals')
+        this.dt?.filter(filterForStatus, 'status', 'equals');
       }
     });
 
@@ -76,7 +76,7 @@ export class EmployeeIndexComponent implements OnInit, OnDestroy, AfterViewInit 
         setTimeout(() => {
           this.groupFormControl.setValue(filterForGroup);
         }, 0);
-        this.dt?.filter(filterForGroup, 'group', 'equals')
+        this.dt?.filter(filterForGroup, 'group', 'equals');
       }
     });
   }

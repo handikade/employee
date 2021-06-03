@@ -6,11 +6,11 @@ import { SpinnerService } from '@services/spinner.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isLoading: boolean = false;
+  isLoading = false;
 
   constructor(private spinnerService: SpinnerService) {
     this.spinnerService.isLoading$.subscribe((isLoading: boolean) => {
       this.isLoading = isLoading;
-    })
+    });
   }
 }

@@ -19,7 +19,7 @@ export class EmployeeService {
 
       subscriber.next({
         status: 200,
-        employees: employees
+        employees
       });
       subscriber.complete();
     });

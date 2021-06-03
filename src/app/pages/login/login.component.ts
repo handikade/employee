@@ -26,7 +26,7 @@ export class LoginComponent {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required]]
-    })
+    });
   }
 
   onSubmit(): void {
@@ -48,7 +48,7 @@ export class LoginComponent {
         });
       }, () => {
         this.spinnerService.setIsLoading(false);
-      })
+      });
     }
   }
 }
